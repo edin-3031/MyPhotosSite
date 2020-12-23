@@ -18,5 +18,7 @@ namespace MyUniqueNature.Data
         public DbSet<Lokacija> Lokacija{ get; set; }
         public DbSet<Slika> Slika{ get; set; }
         public DbSet<Uredjaj> Uredjaj{ get; set; }
+        public DbSet<Oznaka> Oznaka{ get; set; }
+        public DbSet<slika_oznaka> Slika_Oznaka{ get; set; }
     }
 }

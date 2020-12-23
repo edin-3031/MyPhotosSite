@@ -8427,11 +8427,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Edin\\Desktop\\MyUniqueNature\\MyUniqueNature\\MyUniqueNature.csproj",
+      "projectUniqueName": "D:\\MyUniqueNature\\MyUniqueNature\\MyUniqueNature\\MyUniqueNature.csproj",
       "projectName": "MyUniqueNature",
-      "projectPath": "C:\\Users\\Edin\\Desktop\\MyUniqueNature\\MyUniqueNature\\MyUniqueNature.csproj",
+      "projectPath": "D:\\MyUniqueNature\\MyUniqueNature\\MyUniqueNature\\MyUniqueNature.csproj",
       "packagesPath": "C:\\Users\\Edin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Edin\\Desktop\\MyUniqueNature\\MyUniqueNature\\obj\\",
+      "outputPath": "D:\\MyUniqueNature\\MyUniqueNature\\MyUniqueNature\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nZ61L2EGI/9mJhRNGZGwjnppxkcLj2oMEfUevVdGX+LmBK6WumjDBNUpgaj2dM+NXsaVG+Q3UeGl/d6Hv0GYFQ==",
+  "dgSpecHash": "7rrQNxyy/3Au0PWLlEi7dp2xiav2yKqp2YqQjEX5DKKPntSUJB9GjqcdUZJOoKRE5vhXOH2ca4CJnv+dYtIx/Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Edin\\Desktop\\MyUniqueNature\\MyUniqueNature\\MyUniqueNature.csproj",
+  "projectFilePath": "D:\\MyUniqueNature\\MyUniqueNature\\MyUniqueNature\\MyUniqueNature.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Edin\\.nuget\\packages\\bouncycastle.netcore\\1.8.3\\bouncycastle.netcore.1.8.3.nupkg.sha512",
     "C:\\Users\\Edin\\.nuget\\packages\\google.protobuf\\3.11.4\\google.protobuf.3.11.4.nupkg.sha512",
