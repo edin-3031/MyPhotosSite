@@ -1,0 +1,6 @@
+Flexed DIVs
+Hash
+Lazy loading
+Pagining
+Add Watermark on every uploaded picture
+Captcha
