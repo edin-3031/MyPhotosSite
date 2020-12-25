@@ -61,7 +61,7 @@ namespace MyUniqueNature
             {
                 endpoints.MapControllerRoute(
                   name: "areaRoutes",
-                  pattern: "{area}/{controller=Pocetak}/{action=Index}/{id?}");
+                  pattern: "{area}/{controller=Home}/{action=Index}/{id?}");
 
                 endpoints.MapControllerRoute(
                     name: "default",

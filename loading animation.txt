@@ -1,0 +1,38 @@
+.loader {
+                position: relative;
+                border-top: 0vw solid #c2fdc5; /* Light grey */
+                border-bottom: 0vw solid #c2fdc5; /* Light grey */
+                border-left: 0vw solid #c2fdc5; /* Light grey */
+                border-right: 0vw solid #c2fdc5; /* Light grey */
+                border-bottom: 0.5vw solid #28a524; /* Blue */
+                box-shadow: 0px 0px 100px 1vw #28a524 inset(100px 0px 0px 1vw #28a524);
+                border-radius: 50%;
+                width: 8vw;
+                height: 8vw;
+                animation: spin 1s linear infinite;
+                margin: auto;
+            }
+@keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+            }
+#tekst_ucitava{
+                position: relative;
+                text-align: center;
+                font-family:Agency FB ;
+                font-size: 5vw;
+                font-weight: bold;
+                width: 100%;
+                margin: auto;
+            }
+#tekst_i_animacija{
+                position: relative;
+                height: 30%;
+                width: 30%;
+                margin-left: 30%;
+                margin-top: 20vw;
+            }
+<div id="tekst_i_animacija">
+            <div class="loader"></div>
+            <p id="tekst_ucitava">Loading...</p>
+        </div>
