@@ -1,0 +1,241 @@
+﻿html, body {
+    margin: 0px;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
+#container {
+    height: 100%;
+    width: 100%;
+    /* border: 1px solid black; */
+    font-family: "The Abandoned Treasure";
+    margin: 0%;
+}
+
+#left, #right {
+    position: relative;
+    height: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+#left {
+    /* background-color: red; */
+    height: 90%;
+    width: 50%;
+    display: inline-block;
+    float: left;
+}
+
+#right {
+    /* background-color: blue; */
+    height: 100%;
+    width: 50%;
+    display: inline-block;
+    float: right;
+}
+
+#header {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: green;
+}
+
+#logo {
+    position: relative;
+    height: 100%;
+    width: 10%;
+    background-color: aqua;
+}
+
+#gost, #prijava, #registracija {
+    position: relative;
+    /* background-color: yellowgreen; */
+    border: 3px solid white;
+    height: 4.2vw;
+    width: 25vw;
+    text-align: center;
+    font-size: 4vw;
+    border-radius: 2vw;
+    margin-left: 20%;
+    cursor: pointer;
+    transition: all ease 1s;
+    color: white;
+    /* -moz-transition-delay: 1s; */
+    opacity: 0.7;
+}
+
+#gost:hover, #prijava:hover, #registracija:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    transition: all ease 0.5s;
+    -moz-transition-delay: 3s;
+    font-weight: bold;
+    text-decoration: underline;
+    border: 5px solid gainsboro;
+    opacity: 1;
+}
+
+#prijava {
+    top: 13vw;
+}
+
+#registracija {
+    top: 18vw;
+}
+
+#gost {
+    top: 23vw;
+}
+
+#slika_podloga {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+#dugme_prijava {
+    position: relative;
+    left: 35%;
+    width: 30%;
+    background-color: transparent;
+    border: 1px solid white;
+    font-family: "The Abandoned Treasure";
+    color: white;
+    text-align: center;
+    font-size: 3vw;
+    margin-top: 20%;
+    cursor: pointer;
+}
+
+#dugme_nazad {
+    position: relative;
+    left: 35%;
+    width: 30%;
+    background-color: transparent;
+    border: 1px solid white;
+    font-family: "The Abandoned Treasure";
+    color: white;
+    text-align: center;
+    font-size: 3vw;
+    margin-top: 30%;
+    cursor: pointer;
+}
+
+    #dugme_prijava:hover, #dugme_prijava:focus, #dugme_nazad:hover, #dugme_nazad:focus {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        transition: all ease 0.5s;
+        -moz-transition-delay: 3s;
+        font-weight: bold;
+        border: 5px solid gainsboro;
+        opacity: 1;
+    }
+
+#box_prijava {
+    position: relative;
+    font-family: "The Abandoned Treasure";
+    left: 20%;
+    width: 70%;
+}
+
+#box_registracija {
+    font-family: "The Abandoned Treasure";
+}
+
+input::-webkit-input-placeholder {
+    font-family: "The Abandoned Treasure";
+}
+
+input:-ms-input-placeholder {
+    font-family: "The Abandoned Treasure";
+}
+
+input:-moz-placeholder {
+    font-family: "The Abandoned Treasure";
+}
+
+input::-moz-placeholder {
+    font-family: "The Abandoned Treasure";
+}
+
+input {
+    font-family: "The Abandoned Treasure";
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    outline: none;
+    border: 1px solid white;
+    font-size: 2.5vw;
+    width: 100%;
+    text-align: center;
+    margin-top: 25%;
+    color: white;
+    border-radius: 2vw;
+}
+
+input:focus {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    transition: all ease 0.5s;
+    -moz-transition-delay: 3s;
+    font-weight: bold;
+    border: 5px solid gainsboro;
+    opacity: 1;
+}
+
+
+
+::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: white;
+}
+
+::-ms-input-placeholder {
+    color: white;
+}
+
+
+
+.glitch {
+    color: white;
+    font-size: 9vw;
+    text-align: center;
+    /*text-shadow: 0.05em 0 0 rgba(255,0,0,.75), -0.025em -.05em 0 rgba(0,255,0,.75), 0.025em 0.05em 0 rgba(0,0,255,.75);
+                animation: glitch 2000ms infinite;*/
+}
+/*@@keyframes glitch{
+                0% {
+                    text-shadow: 
+                        0.05em 0 0 rgba(255,0,0,.75),
+                        -0.025em -.05em 0 rgba(0,255,0,.75),
+                        0.025em 0.05em 0 rgba(0,0,255,.75);
+                }
+                15% {
+                    text-shadow: 
+                        -0.05em -0.025em 0 rgba(255,0,0,.75),
+                        0.025em 0.025em 0 rgba(0,255,0,.75),
+                        -0.05em -0.05em 0 rgba(0,0,255,.75);
+                }
+                50% {
+                    text-shadow: 
+                        0.025em 0.05em 0 rgba(255,0,0,.75),
+                        0.05em 0 0 rgba(0,255,0,.75),
+                        0 -0.05em 0 rgba(0,0,255,.75);
+                }
+                100% {
+                    text-shadow: 
+                        -0.025em 0 0 rgba(255,0,0,.75),
+                        -0.025em -0.025em 0 rgba(0,255,0,.75),
+                        -0.025em -0.05em 0 rgba(0,0,255,.75);
+                }
+}*/

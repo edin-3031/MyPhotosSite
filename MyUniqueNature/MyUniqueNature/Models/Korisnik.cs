@@ -16,8 +16,11 @@ namespace MyUniqueNature.Models
         public string Prezime { get; set; }
         public string Hash { get; set; }
         public string Salt { get; set; }
+        public string KorisnickoIme { get; set; }
+        public string Mail { get; set; }
         public DateTime Datum_Rodjenja { get; set; }
-        
+        public bool Aktivirano { get; set; }
+
         public Uloga uloga { get; set; }
         [ForeignKey("uloga")]
         public int Uloga_FK { get; set; }

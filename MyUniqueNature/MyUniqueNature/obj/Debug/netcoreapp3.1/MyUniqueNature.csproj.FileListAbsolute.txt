@@ -179,7 +179,6 @@ D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\bin\Debug\netcoreapp3.1\runtimes
 D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\MyUniqueNature.csprojAssemblyReference.cache
 D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\MyUniqueNature.AssemblyInfoInputs.cache
 D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\MyUniqueNature.AssemblyInfo.cs
 D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\MyUniqueNature.csproj.CoreCompileInputs.cache
