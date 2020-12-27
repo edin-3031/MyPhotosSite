@@ -16,8 +16,12 @@ namespace MyUniqueNature.Models
         [ForeignKey("slika")]
         public int slika_FK { get; set; }
 
-        public string Sadržaj { get; set; }
+        public Korisnik korisnik{ get; set; }
+        [ForeignKey("korisnik")]
+        public int korisnik_FK { get; set; }
 
+        public string Sadržaj { get; set; }
+        public DateTime Datum_Vrijeme{ get; set; }
         public int Pozitivno { get; set; }
         public int Negativno { get; set; }
     }

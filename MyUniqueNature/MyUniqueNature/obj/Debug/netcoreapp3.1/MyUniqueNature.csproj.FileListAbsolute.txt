@@ -208,3 +208,4 @@ D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\MyUnique
 D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\MyUniqueNature.dll
 D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\MyUniqueNature.pdb
 D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\MyUniqueNature.genruntimeconfig.cache
+D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\MyUniqueNature.csprojAssemblyReference.cache
