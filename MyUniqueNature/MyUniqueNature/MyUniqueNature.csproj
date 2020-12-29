@@ -23,8 +23,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Admin\" />
-    <Folder Include="Areas\User\" />
+    <Folder Include="Areas\Admin\Controllers\" />
+    <Folder Include="Areas\Admin\Views\" />
+    <Folder Include="Areas\Guest\Controllers\" />
+    <Folder Include="Areas\Guest\Views\" />
+    <Folder Include="Areas\User\Controllers\" />
+    <Folder Include="Areas\User\Views\" />
   </ItemGroup>
 
 </Project>

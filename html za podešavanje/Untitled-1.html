@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html, body{
+                margin: 0%;
+                height: 100%;
+                width: 100%;
+            }
+            #bgrnd{
+                position: relative;
+                height: 100%;
+                width: 100%;
+                background: black;
+            }
+            #blured_main{
+                position: relative;
+                top:5%;
+                margin: auto;
+                height: 90%;
+                width: 90%;
+                border-top: 0px;
+                border-bottom: 2px solid white;
+                border-left: 2px solid white;
+                border-right: 2px solid white;
+                border-radius: 10px;
+                background: rgba(255, 255, 255, 0.77);
+                box-shadow: 0px 22px 32px 5px rgba(255, 255, 255, 0.77), inset 0px 0px 52px 10px rgba(0, 255, 255, 0.77);
+            }
+            #prvi,#drugi,#treci,#cetvrti{
+                position: relative;
+                display: inline-flex;
+                height: 300px;
+                width: 300px;
+                background: red;
+                border-radius: 10px;
+                margin: 3px;
+            }
+            #prvi:hover,#drugi:hover,#treci:hover,#cetvrti:hover{
+                height: 400px;
+                width: 400px;
+                transition: all ease 1.5s;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="bgrnd">
+            <div id="blured_main">
+                <div id="prvi"></div>
+                <div id="drugi"></div>
+                <div id="treci"></div>
+                <div id="cetvrti"></div>
+            </div>
+        </div>
+    </body>
+</html>
