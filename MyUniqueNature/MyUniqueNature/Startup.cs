@@ -31,6 +31,10 @@ namespace MyUniqueNature
             services.AddRazorPages();
 
             services.AddTransient<MySqlConnection>(_ => new MySqlConnection(Configuration["ConnectionStrings:DefaultConnection"]));
+
+            services.AddMvc()
+        .AddSessionStateTempDataProvider();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,7 +56,7 @@ namespace MyUniqueNature
 
             app.UseRouting();
 
-            //app.UseSession();
+            app.UseSession();
 
             //app.UseAuthentication();
             //app.UseAuthorization();
@@ -60,8 +64,8 @@ namespace MyUniqueNature
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                  name: "areaRoutes",
-                  pattern: "{area}/{controller=Home}/{action=Index}/{id?}");
+                  name: "default",
+                  pattern: "{area}/{controller}/{action}/{id?}");
 
                 endpoints.MapControllerRoute(
                     name: "default",

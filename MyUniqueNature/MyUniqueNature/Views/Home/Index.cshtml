@@ -1,6 +1,11 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
     Layout = null;
+
+    string poruka = (string)TempData["Poruka_Greška"];
+
+
+    List<Lokacija>lokacije=(List<Lokacija>)ViewData["lokacije"];
 }
 <!DOCTYPE html>
 <html>
@@ -59,13 +64,74 @@
             ::-webkit-calendar-picker-indicator {
                 filter: invert(1);
             }
+
+            #msg {
+                position: absolute;
+                left: 35vw;
+                top: 2vw;
+                color: white;
+                background: black;
+                width: 30vw;
+                font-size: 4vw;
+                text-align: center;
+                box-shadow: 0px 0px 10px 10px white;
+                opacity: 0.9;
+            }
+
+            #pass:focus, #id:focus, #ime:focus, #prezime:focus, #mail:focus, #psw:focus, #psw2:focus, #datum:focus{
+                filter: invert(1);
+            }
+
+            #drzava {
+                font-family: "The Abandoned Treasure";
+                position: relative;
+                background-color: rgba(0, 0, 0, 0);
+                outline: none;
+                border: 1px solid white;
+                font-size: 2.5vw;
+                width: 75%;
+                text-align: center;
+                margin-top: 4%;
+                color: white;
+                border-radius: 2vw;
+                overflow: scroll;
+                text-align-last: center;
+            }
+            #drzava:focus {
+                background-color: rgba(0, 0, 0, 0.7);
+                color: white;
+                transition: all ease 0.5s;
+                -moz-transition-delay: 3s;
+                font-weight: bold;
+                border: 5px solid gainsboro;
+                opacity: 1;
+                text-align-last: center;
+                filter:invert(1);
+            }
+            .err {
+                border: 2px solid rgb(255, 71, 71);
+                /*background-color: palevioletred;*/
+                color: white;
+                box-shadow: 0px 0px 10px 10px rgb(255, 71, 71);
+                transition: all ease 700ms;
+            }
         </style>
 
     </head>
     <body>
+        
         <div id="container">
+
             <img id="slika_podloga" src="~/Pictures/podloga.jpg">
-    
+
+            @if (poruka != null)
+            {
+                <span id="msg">@poruka</span>
+                <script>
+                    $("#msg").hide().fadeIn(1500).delay(3000).fadeOut(1500);                    
+                </script>
+            }
+
             <div id="left">
                 <p class="glitch">
                     MY<br /> UNIQUE<br /> NA TURE
@@ -80,11 +146,21 @@
                 </div>
                 <div id="box_prijava">
 
-                    <input id="id" type="text" placeholder="Username / Mail" autofocus/>
-                    <input id="pass" type="password" placeholder="Password" /><br/>
+                    <input name="mail_username" id="id" type="text" placeholder="Username / Mail" autofocus />
+                    <input name="pass" id="pass" type="password" placeholder="Password" /><br />
                     <div id="dugme_prijava">Log In</div>
-                    <div id="dugme_nazad">Back</div>
+                    <script>
+                        $("#dugme_prijava").click(function () {
+                            var m_u = document.getElementById("id").value;
+                            var p = document.getElementById("pass").value;
 
+                            window.location.href = "/Auth/AuthProcess?mail_username=" + m_u + "&&pass=" + p;
+
+                            document.getElementById("id").value="";
+                            document.getElementById("pass").value="";
+                        });
+                    </script>
+                    <div id="dugme_nazad">Back</div>
                 </div>
 
                 <div id="box_registracija">
@@ -94,15 +170,97 @@
                     <input id="psw" type="password" placeholder="Password" />
                     <input id="psw2" type="password" placeholder="Confirm Password" />
                     <input id="datum" type="date" placeholder="Birth Date" />
-                    <input id="drzava" type="text" placeholder="Country" /><br />
-                    <div id="dugme_registracija">Sign Up</div>
+
+                    <select id="drzava" name="drzava">
+                        <option value="0">Country</option>
+                        @foreach(var x in lokacije)
+                        {
+                            <option value="@x.LokacijaID">@x.Naziv</option>
+                        }
+                    </select>
+
+                    @*<input id="drzava" type="text" placeholder="Country" /><br />*@
+                    <div onclick="Check()" id="dugme_registracija">Sign Up</div>
                     <div id="dugme_nazad2">Back</div>
                 </div>
             </div>
-        </div> 
+        </div>
         <script>
-            $(document).ready(function () {
 
+            function Check() {
+                var prvi = drugi = treci = cetvrti = peti = sesti = sedmi = false;
+
+                var ime = document.getElementById("ime").value;
+                var prezime = document.getElementById("prezime").value;
+                var mail = document.getElementById("mail").value;
+                var password = document.getElementById("psw").value;
+                var password2 = document.getElementById("psw2").value;
+                var datum = document.getElementById("datum").value;
+                var drzava = document.getElementById("drzava").value;
+
+                if (ime == null || ime == "") {
+                    document.getElementById("ime").classList.add("err");
+                    prvi = false;
+                }
+                else {
+                    document.getElementById("ime").classList.remove("err");
+                    prvi = true;
+                }
+
+                if (prezime == null || prezime == "") {
+                    document.getElementById("prezime").classList.add("err");
+                    drugi = false;
+                }
+                else {
+                    document.getElementById("prezime").classList.remove("err");
+                    drugi = true;
+                }
+                if (mail == null || mail == "") {
+                    document.getElementById("mail").classList.add("err");
+                    treci = false;
+                }
+                else {
+                    document.getElementById("mail").classList.remove("err");
+                    treci = true;
+                }
+                if (password == null || password == "") {
+                    document.getElementById("psw").classList.add("err");
+                    cetvrti = false;
+                }
+                else {
+                    document.getElementById("psw").classList.remove("err");
+                    cetvrti = true;
+                }
+                if (password2 == null || password2 == "" || password != password2) {
+                    document.getElementById("psw2").classList.add("err");
+                    peti = false;
+                }
+                else {
+                    document.getElementById("psw2").classList.remove("err");
+                    peti = true;
+                }
+                if (datum == null || datum == "") {
+                    document.getElementById("datum").classList.add("err");
+                    sesti = false;
+                }
+                else {
+                    document.getElementById("datum").classList.remove("err");
+                    sesti = true;
+                }
+                if (drzava == 0) {
+                    document.getElementById("drzava").classList.add("err");
+                    sedmi = false;
+                }
+                else {
+                    document.getElementById("drzava").classList.remove("err");
+                    sedmi = true;
+                }
+                if (prvi && drugi && treci && cetvrti && peti && sesti && sedmi) {
+                    window.location.href = "/Home/Register?ime="+ime+"&&prezime="+prezime+"&&mail="+mail+"&&password="+password+"&&datum="+datum+"&&lokacija="+drzava;
+                }
+            }
+
+            $(document).ready(function () {
                 $("#box_pocetak").show();
                 $("#box_prijava").hide();
                 $("#box_registracija").hide();
@@ -127,8 +285,14 @@
                 document.getElementById("psw").value = "";
                 document.getElementById("psw2").value = "";
                 document.getElementById("datum").value = "";
-                document.getElementById("drzava").value = "";
 
+                document.getElementById("ime").classList.remove("err");
+                document.getElementById("prezime").classList.remove("err");
+                document.getElementById("mail").classList.remove("err");
+                document.getElementById("psw").classList.remove("err");
+                document.getElementById("psw2").classList.remove("err");
+                document.getElementById("datum").classList.remove("err");
+                document.getElementById("drzava").classList.remove("err");
             });
 
             $("#prijava").click(function () {
@@ -140,6 +304,14 @@
                 $("#box_pocetak").fadeOut();
                 $("#box_registracija").delay(600).fadeIn();
             });
+
+            $("#gost").click(function () {
+
+                window.location.href = "/Guest/Home/Index";
+            });
+
         </script>
+
+
     </body>
 </html>

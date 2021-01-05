@@ -192,7 +192,6 @@ D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\scopedcs
 D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\MyUniqueNature.TagHelpers.input.cache
 D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\MyUniqueNature.TagHelpers.output.cache
 D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\MyUniqueNature.RazorCoreGenerate.cache
-D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
@@ -208,4 +207,7 @@ D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\MyUnique
 D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\MyUniqueNature.dll
 D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\MyUniqueNature.pdb
 D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\MyUniqueNature.genruntimeconfig.cache
+D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Home\Index.cshtml.g.cs
 D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\MyUniqueNature.csprojAssemblyReference.cache
+D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\Razor\Areas\Guest\Views\Home\Index.cshtml.g.cs
+D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\Razor\Areas\User\Views\Home\Index.cshtml.g.cs
