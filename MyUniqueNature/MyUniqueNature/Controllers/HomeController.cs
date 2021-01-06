@@ -1,11 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MailKit.Net.Smtp;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using MimeKit;
 using MyUniqueNature.Data;
 using MyUniqueNature.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -92,7 +95,9 @@ namespace MyUniqueNature.Controllers
             db.Add(k);
             db.SaveChanges();
 
-            TempData["Poruka_Greška"] = "Welcome, \n You Can Log In";
+            TempData["Poruka_Greška"] = "Check Your Mail";
+
+            Mail(k, password);
 
             return Redirect("/Home/Index");
         }
@@ -117,6 +122,28 @@ namespace MyUniqueNature.Controllers
                 }
             }
             return false;
+        }
+
+        public void Mail(Korisnik k, string pass)
+        {
+            var message = new MimeMessage();
+            message.From.Add(new MailboxAddress("MyUniqueNature", "myuniquenatur@gmail.com"));
+            message.To.Add(new MailboxAddress(k.KorisnickoIme,k.Mail));
+            message.Subject = "Welcome To My Unique Nature";
+            message.Body = new TextPart("plain")
+            {
+                Text = "Hello " + k.Ime + " " + k.Prezime + ",\n\n We wanna welcome You to our site and further in this message is your log in data. Enjoy :)\n\n\nUsername: " + k.KorisnickoIme + "\nPassword: " + pass
+            };
+
+            using(var client=new SmtpClient())
+            {
+                client.Connect("smtp.gmail.com", 587, false);
+                client.Authenticate("myuniquenatur@gmail.com", "Maglaj2021");
+
+                client.Send(message);
+
+                client.Disconnect(true);
+            }
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

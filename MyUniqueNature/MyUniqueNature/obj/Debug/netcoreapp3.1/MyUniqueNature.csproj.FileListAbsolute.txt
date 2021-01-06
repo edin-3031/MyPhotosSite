@@ -211,3 +211,8 @@ D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\Razor\Ar
 D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\MyUniqueNature.csprojAssemblyReference.cache
 D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\Razor\Areas\Guest\Views\Home\Index.cshtml.g.cs
 D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\Razor\Areas\User\Views\Home\Index.cshtml.g.cs
+D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\bin\Debug\netcoreapp3.1\MailKit.dll
+D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\bin\Debug\netcoreapp3.1\MimeKit.dll
+D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\Razor\Views\Home\Mail.cshtml.g.cs
+D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\bin\Debug\netcoreapp3.1\StackifyLib.dll
+D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\bin\Debug\netcoreapp3.1\StackifyLib.AspNetCore.dll

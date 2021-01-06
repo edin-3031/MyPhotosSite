@@ -220,8 +220,18 @@
                     treci = false;
                 }
                 else {
-                    document.getElementById("mail").classList.remove("err");
-                    treci = true;
+                    var str = document.getElementById("mail").value;
+                    var patt = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[A-Z]{2}|com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum)\b/;
+
+                    var result = str.match(patt);
+                    if (result) {
+                        document.getElementById("mail").classList.remove("err");
+                        treci = true;
+                    }
+                    else {
+                        document.getElementById("mail").classList.add("err");
+                        treci = false;
+                    }
                 }
                 if (password == null || password == "") {
                     document.getElementById("psw").classList.add("err");
