@@ -1,0 +1,66 @@
+﻿@using MyUniqueNature.Models.VM;
+@model lista_lokacijaVM;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    a{
+        cursor:pointer;
+    }
+    td, th{
+        text-align:center;
+    }
+    span{
+        position:absolute;
+        float:right;
+        margin-left:1%;
+        margin-top:0.5%;
+        font-size:80%;
+    }
+    table{
+        margin:auto;
+    }
+</style>
+<cente>
+    <table class="table">
+        <a class="btn btn-success" style="position: relative; left: 50%; margin-bottom:3%;" href="/Admin/Lokacija/Add">Add</a>
+
+        <thead>
+        <th>
+            @Html.ActionLink("Naziv", "Index", new { sortBy=ViewBag.SortNameParameter}, new { @style = "color:#000000;" })
+        </th>
+        <th>
+            Akcija
+        </th>
+
+        </thead>
+        <tbody>
+            @foreach (var x in Model.lista_lokacija)
+            {
+                <tr>
+                    <td>@x.Naziv</td>
+                    <td>
+                        <a href="/Admin/Lokacija/Edit?id=@x.LokacijaID" style="color:white; text-decoration:none" id="change_@x.LokacijaID" class="btn btn-primary">Edit</a>
+                        <a style="color:white; text-decoration:none" id="delete_@x.LokacijaID" class="btn btn-danger">Delete</a><span id="potvrda_@x.LokacijaID">Sure? <b><a style="color:black; text-decoration:none" href="/Admin/Lokacija/Delete?id=@x.LokacijaID">Yes</a></b> | <b><a style="color:black; text-decoration:none" id="no_@x.LokacijaID">No</a></b></span>
+
+                        <script>
+                        $(document).ready(function () {
+                            $("#potvrda_@x.LokacijaID").hide();
+                        });
+
+                        $("#delete_@x.LokacijaID").click(function () {
+
+                            $("#potvrda_@x.LokacijaID").fadeIn();
+
+                        });
+
+                        $("#no_@x.LokacijaID").click(function () {
+                            $("#potvrda_@x.LokacijaID").fadeOut();
+                        });
+                        </script>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</cente>

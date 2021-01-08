@@ -1,0 +1,24 @@
+﻿@using MyUniqueNature.Models;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    Lokacija l = (Lokacija)ViewData["lokacija"];
+}
+<center>
+    <form method="post" action="/Admin/Lokacija/EditSave">
+        <table>
+            <tr>
+                <td>
+                    <label>
+                        Naziv
+                    </label>
+                </td>
+                <td>
+                    <input hidden="hidden" name="id" value="@l.LokacijaID" />
+                    <input name="naziv" value="@l.Naziv" />
+                </td>
+            </tr>
+        </table>
+        <button type="submit" class="btn btn-success">Save</button>
+    </form>
+</center>

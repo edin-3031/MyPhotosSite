@@ -216,3 +216,6 @@ D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\bin\Debug\netcoreapp3.1\MimeKit.
 D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\Razor\Views\Home\Mail.cshtml.g.cs
 D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\bin\Debug\netcoreapp3.1\StackifyLib.dll
 D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\bin\Debug\netcoreapp3.1\StackifyLib.AspNetCore.dll
+D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Lokacija\Index.cshtml.g.cs
+D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Lokacija\Edit.cshtml.g.cs
+D:\MyUniqueNature\MyUniqueNature\MyUniqueNature\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Lokacija\Add.cshtml.g.cs

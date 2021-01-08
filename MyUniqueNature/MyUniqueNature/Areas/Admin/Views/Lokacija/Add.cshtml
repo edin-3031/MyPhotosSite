@@ -1,0 +1,22 @@
+﻿@using MyUniqueNature.Models;
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<center>
+    <form method="post" action="/Admin/Lokacija/AddSave">
+        <table>
+            <tr>
+                <td>
+                    <label>
+                        Naziv
+                    </label>
+                </td>
+                <td>
+                    <input name="naziv" />
+                </td>
+            </tr>
+        </table>
+        <button type="submit" class="btn btn-success">Save</button>
+    </form>
+</center>
