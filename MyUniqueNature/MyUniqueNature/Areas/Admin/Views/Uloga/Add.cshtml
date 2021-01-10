@@ -1,0 +1,23 @@
+﻿@using MyUniqueNature.Models; 
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<center>
+    <form method="post" action="/Admin/Uloga/AddSave">
+        <table>
+            <tr>
+                <td>
+                    <label>
+                        Naziv
+                    </label>
+                </td>
+                <td>
+                    <input name="naziv"/>
+                </td>
+            </tr>
+        </table>
+        <button class="btn btn-success" type="submit">Save</button>
+    </form>
+</center>

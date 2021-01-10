@@ -1,0 +1,97 @@
+﻿@using MyUniqueNature.Models;
+@using MyUniqueNature.Models.VM;
+@model lista_korisnikVM;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    a {
+        cursor: pointer;
+    }
+
+    td, th {
+        text-align: center;
+    }
+
+    span {
+        position: absolute;
+        float: right;
+        margin-left: 1%;
+        margin-top: 0.5%;
+        font-size: 80%;
+    }
+
+    table {
+        margin: auto;
+    }
+</style>
+
+    <table class="table">
+        <a style="color:white; position:relative; left:50%;" class="btn btn-success" href="/Admin/Korisnik/Add">Add</a>
+        <thead>
+            <th>
+                Name
+            </th>
+            <th>
+                Username
+            </th>
+            <th>
+                Role
+            </th>
+            <th>
+                e-Mail
+            </th>
+            <th>
+                Location
+            </th>
+            <th>
+                Birth Date (Years)
+            </th>
+            <th>
+                Action
+            </th>
+        </thead>
+        @foreach(var x in Model.lista)
+        {
+            <tr>
+                <td>
+                    @(x.ime+" "+x.prezime)
+                </td>
+                <td>
+                    @x.korisnicko_ime
+                </td>
+                <td>
+                    @x.uloga
+                </td>
+                <td>
+                    @x.mail
+                </td>
+                <td>
+                    @x.lokacija
+                </td>
+                <td>
+                    @(x.datum_rodjenja.Date.Day+"."+x.datum_rodjenja.Date.Month+"."+x.datum_rodjenja.Date.Year)<b>@(" (" +x.godine+ ")" )</b>
+                </td>
+                <td>
+                    <a style="color:white;" class="btn btn-primary" href="/Admin/Korisnik/Edit?id=@x.id">Edit</a>
+                    <a style="color:white;" class="btn btn-danger" id="delete_@x.id">Delete</a><span id="potvrda_@x.id">Sure? <b><a style="color:black; text-decoration:none" href="/Admin/Korisnik/Delete?id=@x.id">Yes</a></b> | <b><a style="color:black; text-decoration:none" id="no_@x.id">No</a></b></span>
+
+                    <script>
+                            $(document).ready(function () {
+                                $("#potvrda_@x.id").hide();
+                            });
+
+                            $("#delete_@x.id").click(function () {
+
+                                $("#potvrda_@x.id").fadeIn();
+
+                            });
+
+                            $("#no_@x.id").click(function () {
+                                $("#potvrda_@x.id").fadeOut();
+                            });
+                    </script>
+                </td>
+            </tr>
+        }
+    </table>

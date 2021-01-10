@@ -1,0 +1,68 @@
+﻿@using MyUniqueNature.Models; 
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    List<Uloga> uloge = (List<Uloga>)ViewData["uloge"];
+}
+<style>
+    a {
+        cursor: pointer;
+    }
+    td, th {
+        text-align: center;
+    }
+    span {
+        position: absolute;
+        float: right;
+        margin-left: 1%;
+        margin-top: 0.5%;
+        font-size: 80%;
+    }
+    table{
+        margin:auto;
+    }
+</style>
+<center>
+    <table class="table">
+        <a class="btn btn-success" style="position: relative; margin-bottom:3%;" href="/Admin/Uloga/Add">Add</a>
+        <thead>
+            <th>
+                Naziv
+            </th>
+            <th>
+                Akcija
+            </th>
+        </thead>
+        <tbody>
+            
+            @foreach(var x in @uloge)
+            {
+                <tr>
+                    <td>
+                        @x.Naziv
+                    </td>
+                    <td>
+                        <a class="btn btn-primary" href="/Admin/Uloga/Edit?id=@x.UlogaID">Edit</a>
+                        <a style="color:white" class="btn btn-danger" id="delete_@x.UlogaID">Delete</a><span id="potvrda_@x.UlogaID">Sure? <b><a style="color:black; text-decoration:none" href="/Admin/Uloga/Delete?id=@x.UlogaID">Yes</a></b> | <b><a style="color:black; text-decoration:none" id="no_@x.UlogaID">No</a></b></span>
+
+                        <script>
+                            $(document).ready(function () {
+                                $("#potvrda_@x.UlogaID").hide();
+                            });
+
+                            $("#delete_@x.UlogaID").click(function () {
+
+                                $("#potvrda_@x.UlogaID").fadeIn();
+
+                            });
+
+                            $("#no_@x.UlogaID").click(function () {
+                                $("#potvrda_@x.UlogaID").fadeOut();
+                            });
+                        </script>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</center>

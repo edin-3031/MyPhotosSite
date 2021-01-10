@@ -1,0 +1,23 @@
+﻿@using MyUniqueNature.Models; 
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    Uloga u = (Uloga)ViewData["uloga"];
+}
+<center>
+    <form method="post" action="/Admin/Uloga/EditSave">
+        <table>
+            <tr>
+                <td>
+                    <label>
+                        Naziv
+                    </label>
+                </td>
+                <td>
+                    <input hidden="hidden" name="id" value="@u.UlogaID"/>
+                    <input name="naziv" value="@u.Naziv"/>
+                </td>
+            </tr>
+        </table>
+        <button type="submit" class="btn btn-success">Save</button>
+    </form>
+</center>

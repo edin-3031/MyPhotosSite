@@ -1,0 +1,133 @@
+﻿@using MyUniqueNature.Models;
+@using MyUniqueNature.Models.VM;
+@{
+
+    korisnikVM k = (korisnikVM)ViewData["korisnik"];
+}
+<style>
+    .err{
+        border:3px solid red;
+    }
+    #stari, #novi, #novi_ponovo{
+        position:absolute;
+        float:right;
+        margin-left:1.5%;
+        color:white;
+        background-color:red;
+        font-weight:bold;
+        box-shadow:0px 0px 10px 0px red;
+        border-radius:10px;
+    }
+</style>
+<center>
+        <input hidden="hidden" name="id" value="@k.id" />
+        <table>
+            <tr>
+                <td>
+                    <label>
+                        Trenutna šifra
+                    </label>
+                </td>
+                <td>
+                    <input id="psw" name="psw" /><span id="stari"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        Nova Šifra
+                    </label>
+                </td>
+                <td>
+                    <input id="psw2" name="psw2" /><span id="novi"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        Potvrdite Novu Šifru
+                    </label>
+                </td>
+                <td>
+                    <input id="psw2_confirm" name="psw2_confirm" /><span id="novi_ponovo"></span>
+                </td>
+            </tr>
+        </table>
+        <button class="btn btn-success" id="snimi" onclick="check()">Save</button>
+        <script>
+            $(document).ready(function () {
+                $("#stari").hide();
+                $("#novi").hide();
+                $("#novi_ponovo").hide();
+            });
+
+            function check() {
+                var prvi = drugi = treci = false;
+                var pass1 = document.getElementById("psw").value;
+                var pass2 = document.getElementById("psw2").value;
+                var pass3 = document.getElementById("psw2_confirm").value;
+
+                if (pass1 == null || pass1 == "") {
+                    prvi = false;
+                    document.getElementById("psw").classList.add("err");
+                    $("#stari").html("Polje ne može biti prazno").fadeIn();
+                }
+                else {
+                    prvi = true;
+                    document.getElementById("psw").classList.remove("err");
+                    $("#stari").html("").fadeOut();
+                }
+                if (pass2 == null || pass2 == "") {
+                    drugi = false;
+                    document.getElementById("psw2").classList.add("err");
+                    $("#novi").html("Polje ne može biti prazno").fadeIn();
+                }
+                else if (pass2 == pass1) {
+                    drugi = false;
+                    document.getElementById("psw2").classList.add("err");
+                    $("#novi").html("Nova šifra se mora razlikovati").fadeIn();
+                }
+                else {
+                    drugi = true;
+                    document.getElementById("psw2").classList.remove("err");
+                    $("#novi").html("").fadeOut();
+                }
+                if (pass3 == null || pass3 == "") {
+                    treci = false;
+                    document.getElementById("psw2_confirm").classList.add("err");
+                    $("#novi_ponovo").html("Polje ne može biti prazno").fadeIn();
+                }
+                else if (pass3 != pass2) {
+                    treci = false;
+                    document.getElementById("psw2_confirm").classList.add("err");
+                    $("#novi_ponovo").html("Nove šifre se ne podudaraju").fadeIn();
+                }
+                else {
+                    treci = true;
+                    document.getElementById("psw2_confirm").classList.remove("err");
+                    $("#novi_ponovo").html("").fadeOut();
+                }
+                if (prvi && drugi && treci) {
+                    window.location.href = "/Admin/Ajax/EditPassSave?id=@k.id&&psw=" + pass1 + "&&psw2=" + pass2 + "&&psw2_confirm=" + pass3;
+                }
+            }
+        </script>
+</center>
+@*<script>
+import { type } from "jquery";
+
+    $("#snimi").click(function () {
+
+        var form = $("#forma");
+
+        $.ajax({
+            type: "POST",
+            url: "/Admin/Ajax/EditPassSave",
+            data: form.serialize(),
+            success: function (event) {
+                //$("#box").hide();
+                window.location.href = "/Admin/Korisnik/Edit?id=@k.id";
+            }
+        });
+    });
+</script>*@

@@ -1,0 +1,107 @@
+﻿@using MyUniqueNature.Models;
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    List<Uloga> u = (List<Uloga>)ViewData["uloge"];
+    List<Lokacija> l = (List<Lokacija>)ViewData["lokacije"];
+}
+<center>
+    <form method="post" action="/Admin/Korisnik/AddSave">
+        <table>
+            <tr>
+                <td>
+                    <label>
+                        Ime
+                    </label>
+                </td>
+                <td>
+                    <input name="ime" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        Prezime
+                    </label>
+                </td>
+                <td>
+                    <input name="prezime" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        Lozinka
+                    </label>
+                </td>
+                <td>
+                    <input type="password" name="lozinka" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        Confirm password
+                    </label>
+                </td>
+                <td>
+                    <input type="password" name="lozinka2" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        Birth Date
+                    </label>
+                </td>
+                <td>
+                    <input name="datum" type="datetime-local" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        e-Mail
+                    </label>
+                </td>
+                <td>
+                    <input name="mail" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        Location
+                    </label>
+                </td>
+                <td>
+                    <select name="lokacija">
+                        <option value="0">---Choose---</option>
+                        @foreach(var x in l)
+                        {
+                            <option value="@x.LokacijaID">@x.Naziv</option>
+                        }
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        Role
+                    </label>
+                </td>
+                <td>
+                    <select name="uloga">
+                        <option value="0">---Choose---</option>
+                        @foreach (var x in u)
+                        {
+                            <option value="@x.UlogaID">@x.Naziv</option>
+                        }
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <button class="btn btn-success" type="submit">Save</button>
+    </form>
+</center>

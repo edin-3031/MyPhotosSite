@@ -1,0 +1,131 @@
+﻿@using MyUniqueNature.Models;
+@using MyUniqueNature.Models.VM;
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    korisnikVM k = (korisnikVM)ViewData["korisnik"];
+    List<Uloga> u = (List<Uloga>)ViewData["uloge"];
+    List<Lokacija> l = (List<Lokacija>)ViewData["lokacije"];
+
+    string poruka=(string)TempData["pass_poruka"];
+}
+<style>
+    #box{
+        margin-top:5%;
+    }
+    .err{
+        border:2px solid red;
+        box-shadow:0px 0px 7px 0px red; 
+    }
+    option, select{
+        text-align-last:center;
+    }
+    input,select{
+        width:120%;
+    }
+</style>
+<center>
+    @if (poruka != null)
+    {
+        <span style="font-size:3vw; color:black;" id="pass__msg">@poruka</span>
+        <script>
+            $("#pass__msg").hide().fadeIn(800).delay(3000).fadeOut(800);
+        </script>
+    }
+    <form method="post" action="/Admin/Korisnik/EditSave">
+        <input hidden="hidden" value="@k.id" name="id" />
+        <table>
+            <tr>
+                <td>
+                    <label>
+                        Ime
+                    </label>
+                </td>
+                <td>
+                    <input name="ime" value="@k.ime" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        Prezime
+                    </label>
+                </td>
+                <td>
+                    <input name="prezime" value="@k.prezime" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        e-Mail
+                    </label>
+                </td>
+                <td>
+                    <input name="mail" value="@k.mail" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        Datum
+                    </label>
+                </td>
+                <td>
+                    <input type="datetime" name="datum" id="dat" value="@k.datum_rodjenja.Date " />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        Lokacija
+                    </label>
+                </td>
+                <td>
+                    <select id="loc" name="lokacija">
+                        <option value="@k.lokacija_fk">@k.lokacija</option>
+                        <option disabled="disabled">---------------------------------</option>
+                        @foreach (var x in l)
+                        {
+                            <option value="@x.LokacijaID">@x.Naziv</option>
+                        }
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        Uloga
+                    </label>
+                </td>
+                <td>
+                    <select id="role" name="uloga">
+                        <option value="@k.uloga_fk">@k.uloga</option>
+                        <option disabled="disabled">---------------------------------</option>
+                        @foreach (var x in u)
+                        {
+                            <option value="@x.UlogaID">@x.Naziv</option>
+                        }
+                    </select>
+                </td>
+            </tr>
+
+        </table>
+        <button type="submit" class="btn btn-success">Save</button>
+    </form>
+    <br />
+    <a style="color:white;" id="pass_change" class="btn btn-primary">Change Password</a>
+    <div id="box"></div>
+</center>
+<script>
+
+    $("#pass_change").click(function (event) {
+
+        $.get("/Admin/Ajax/EditPass?id=@k.id", function (result) {
+
+            $("#box").html(result);
+        });
+    });
+
+</script>
